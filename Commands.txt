@@ -1,0 +1,16 @@
+# show running process
+docker ps
+
+# show all process
+docker ps -a
+
+# build a new custom image
+docker build .
+
+# build a new custom image with a name
+docker build -t node-app .
+# -t -> tag name
+
+docker run -d -p 3000:3000 --name node-app-container node-app
+# -d -> detach mode
+# -p -> port number
