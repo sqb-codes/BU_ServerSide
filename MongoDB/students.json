@@ -1,0 +1,122 @@
+[
+    {
+        "name" : "Ram",
+        "email" : "ram2@gmail.com",
+        "phone" : 8987877789,
+        "student_details" : {
+            "batch" : 2022,
+            "enrollment" : "E23CSEU3444",
+            "year" : 3,
+            "sem" : 5
+        },
+        "hobbies" : ["cricket", "football", "chess"]
+    },
+    {
+        "name" : "Aman",
+        "email" : "aman52@gmail.com",
+        "phone" : 8987007789,
+        "student_details" : {
+            "batch" : 2022,
+            "enrollment" : "E23CSEU3400",
+            "year" : 3,
+            "sem" : 5
+        },
+        "hobbies" : ["cricket", "football", "chess"]
+    },
+    {
+        "name" : "Namit",
+        "email" : "namit67@gmail.com",
+        "phone" : 8922877789,
+        "student_details" : {
+            "batch" : 2022,
+            "enrollment" : "E23CSEU3004",
+            "year" : 3,
+            "sem" : 5
+        },
+        "hobbies" : ["cricket", "chess", "tennis"]
+    },
+    {
+        "name" : "Harsh",
+        "email" : "harsh00@gmail.com",
+        "phone" : 8987877700,
+        "student_details" : {
+            "batch" : 2023,
+            "enrollment" : "E24CSEU3044",
+            "year" : 2,
+            "sem" : 3
+        },
+        "hobbies" : ["football", "chess", "table tennis"]
+    },
+    {
+        "name" : "Kunal",
+        "email" : "kunal11@gmail.com",
+        "phone" : 8980197789,
+        "student_details" : {
+            "batch" : 2022,
+            "enrollment" : "E23CSEU3491",
+            "year" : 3,
+            "sem" : 5
+        },
+        "hobbies" : ["cricket", "football", "gym"]
+    },
+    {
+        "name" : "Akash",
+        "email" : "akash012@gmail.com",
+        "phone" : 8986717789,
+        "student_details" : {
+            "batch" : 2022,
+            "enrollment" : "E23CSEU1044",
+            "year" : 3,
+            "sem" : 5
+        },
+        "hobbies" : ["cricket", "chess", "hockey"]
+    },
+    {
+        "name" : "Vaibhav",
+        "email" : "vaibhav@gmail.com",
+        "phone" : 8987879881,
+        "student_details" : {
+            "batch" : 2022,
+            "enrollment" : "E23CSEU2044",
+            "year" : 3,
+            "sem" : 5
+        },
+        "hobbies" : ["cricket", "football", "chess"]
+    },
+    {
+        "name" : "Pooja",
+        "email" : "pooja61@gmail.com",
+        "phone" : 8980917789,
+        "student_details" : {
+            "batch" : 2022,
+            "enrollment" : "E23CSEU3104",
+            "year" : 3,
+            "sem" : 5
+        },
+        "hobbies" : ["cricket", "football", "chess"]
+    },
+    {
+        "name" : "Vibha",
+        "email" : "vibha0101@gmail.com",
+        "phone" : 8987870019,
+        "student_details" : {
+            "batch" : 2023,
+            "enrollment" : "E23CSEU0909",
+            "year" : 2,
+            "sem" : 3
+        },
+        "hobbies" : ["cricket", "football", "chess"]
+    },
+    {
+        "name" : "Sikha",
+        "email" : "sikha901@gmail.com",
+        "phone" : 9017877789,
+        "student_details" : {
+            "batch" : 2022,
+            "enrollment" : "E24CSEU0913",
+            "year" : 4,
+            "sem" : 7
+        },
+        "hobbies" : ["cricket", "football", "chess"]
+    }
+]

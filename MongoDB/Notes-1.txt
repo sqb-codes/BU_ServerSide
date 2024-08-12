@@ -1,0 +1,431 @@
+bennett> db.staff.insertMany([{name:"Sam", email:"sam33@gmail.com"}, {name:"Tom",email:"tom31@gmai;.com"}, {name:"Adam", email:"adam44@gmail.com"}, {name:"Steve", email:"steve00@gmail.com"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66b99daeb1417d10ac9f990a'),
+    '1': ObjectId('66b99daeb1417d10ac9f990b'),
+    '2': ObjectId('66b99daeb1417d10ac9f990c'),
+    '3': ObjectId('66b99daeb1417d10ac9f990d')
+  }
+}
+bennett> db.sta
+db.stats  db.staff
+
+bennett> db.staff.find();
+[
+  {
+    _id: ObjectId('66b99daeb1417d10ac9f990d'),
+    name: 'Steve',
+    email: 'steve00@gmail.com'
+  }
+]
+bennett> db.members.find();
+
+bennett> db.members.insertMany([{name:"Sam", email:"sam33@gmail.com"}, {name:"Tom",email:"tom31@gmai;.com"}, {name:"Adam", email:"adam44@gmail.com"}, {name:"Steve", email:"steve00@gmail.com"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66b99ddcb1417d10ac9f990e'),
+    '1': ObjectId('66b99ddcb1417d10ac9f990f'),
+    '2': ObjectId('66b99ddcb1417d10ac9f9910'),
+    '3': ObjectId('66b99ddcb1417d10ac9f9911')
+  }
+}
+bennett> db.members.find();
+[
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f990e'),
+    name: 'Sam',
+    email: 'sam33@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f990f'),
+    name: 'Tom',
+    email: 'tom31@gmai;.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f9910'),
+    name: 'Adam',
+    email: 'adam44@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f9911'),
+    name: 'Steve',
+    email: 'steve00@gmail.com'
+  }
+]
+bennett> db.members.insertOne({name:"Nick", email:"nick2211@gmail.com"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66b99df8b1417d10ac9f9912')
+}
+bennett> db.members.find();
+[
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f990e'),
+    name: 'Sam',
+    email: 'sam33@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f990f'),
+    name: 'Tom',
+    email: 'tom31@gmai;.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f9910'),
+    name: 'Adam',
+    email: 'adam44@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f9911'),
+    name: 'Steve',
+    email: 'steve00@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99df8b1417d10ac9f9912'),
+    name: 'Nick',
+    email: 'nick2211@gmail.com'
+  }
+]
+bennett> db.members.insertOne({name:"John", email:"john5211@gmail.com"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66b99e43b1417d10ac9f9913')
+}
+bennett> db.members.find();
+[
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f990f'),
+    name: 'Tom',
+    email: 'tom31@gmai;.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f9910'),
+    name: 'Adam',
+    email: 'adam44@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f9911'),
+    name: 'Steve',
+    email: 'steve00@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99df8b1417d10ac9f9912'),
+    name: 'Nick',
+    email: 'nick2211@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99e43b1417d10ac9f9913'),
+    name: 'John',
+    email: 'john5211@gmail.com'
+  }
+]
+bennett> db.members.find().count();
+5
+bennett> db.members.findOne().count();
+TypeError: db.members.findOne().count is not a function
+bennett> db.members.find();
+[
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f990f'),
+    name: 'Tom',
+    email: 'tom31@gmai;.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f9910'),
+    name: 'Adam',
+    email: 'adam44@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99ddcb1417d10ac9f9911'),
+    name: 'Steve',
+    email: 'steve00@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99df8b1417d10ac9f9912'),
+    name: 'Nick',
+    email: 'nick2211@gmail.com'
+  },
+  {
+    _id: ObjectId('66b99e43b1417d10ac9f9913'),
+    name: 'John',
+    email: 'john5211@gmail.com'
+  }
+]
+bennett> db.members.find({name:"John"});
+[
+  {
+    _id: ObjectId('66b99e43b1417d10ac9f9913'),
+    name: 'John',
+    email: 'john5211@gmail.com'
+  }
+]
+bennett> db.members.find({}, {name:1});
+[
+  { _id: ObjectId('66b99ddcb1417d10ac9f990f'), name: 'Tom' },
+  { _id: ObjectId('66b99ddcb1417d10ac9f9910'), name: 'Adam' },
+  { _id: ObjectId('66b99ddcb1417d10ac9f9911'), name: 'Steve' },
+  { _id: ObjectId('66b99df8b1417d10ac9f9912'), name: 'Nick' },
+  { _id: ObjectId('66b99e43b1417d10ac9f9913'), name: 'John' }
+]
+bennett> db.members.find({}, {name:1, _id:0});
+[
+  { name: 'Tom' },
+  { name: 'Adam' },
+  { name: 'Steve' },
+  { name: 'Nick' },
+  { name: 'John' }
+]
+bennett> db.students.insertMany([
+...     {
+...         "name" : "Ram",
+...         "email" : "ram2@gmail.com",
+...         "phone" : 8987877789,
+...         "student_details" : {
+...             "batch" : 2022,
+...             "enrollment" : "E23CSEU3444",
+...             "year" : 3,
+...             "sem" : 5
+...         },
+...         "hobbies" : ["cricket", "football", "chess"]
+...     },
+...     {
+...         "name" : "Aman",
+...         "email" : "aman52@gmail.com",
+...         "phone" : 8987007789,
+...         "student_details" : {
+...             "batch" : 2022,
+...             "enrollment" : "E23CSEU3400",
+...             "year" : 3,
+...             "sem" : 5
+...         },
+...         "hobbies" : ["cricket", "football", "chess"]
+...     },
+...     {
+...         "name" : "Namit",
+...         "email" : "namit67@gmail.com",
+...         "phone" : 8922877789,
+...         "student_details" : {
+...             "batch" : 2022,
+...             "enrollment" : "E23CSEU3004",
+...             "year" : 3,
+...             "sem" : 5
+...         },
+...         "hobbies" : ["cricket", "chess", "tennis"]
+...     },
+...     {
+...         "name" : "Harsh",
+...         "email" : "harsh00@gmail.com",
+...         "phone" : 8987877700,
+...         "student_details" : {
+...             "batch" : 2023,
+...             "enrollment" : "E24CSEU3044",
+...             "year" : 2,
+...             "sem" : 3
+...         },
+...         "hobbies" : ["football", "chess", "table tennis"]
+...     },
+...     {
+...         "name" : "Kunal",
+...         "email" : "kunal11@gmail.com",
+...         "phone" : 8980197789,
+...         "student_details" : {
+...             "batch" : 2022,
+...             "enrollment" : "E23CSEU3491",
+...             "year" : 3,
+...             "sem" : 5
+...         },
+...         "hobbies" : ["cricket", "football", "gym"]
+...     },
+...     {
+...         "name" : "Akash",
+...         "email" : "akash012@gmail.com",
+...         "phone" : 8986717789,
+...         "student_details" : {
+...             "batch" : 2022,
+...             "enrollment" : "E23CSEU1044",
+...             "year" : 3,
+...             "sem" : 5
+...         },
+...         "hobbies" : ["cricket", "chess", "hockey"]
+...     },
+...     {
+...         "name" : "Vaibhav",
+...         "email" : "vaibhav@gmail.com",
+...         "phone" : 8987879881,
+...         "student_details" : {
+...             "batch" : 2022,
+...             "enrollment" : "E23CSEU2044",
+...             "year" : 3,
+...             "sem" : 5
+...         },
+...         "hobbies" : ["cricket", "football", "chess"]
+...     },
+...     {
+...         "name" : "Pooja",
+...         "email" : "pooja61@gmail.com",
+...         "phone" : 8980917789,
+...         "student_details" : {
+...             "batch" : 2022,
+...             "enrollment" : "E23CSEU3104",
+...             "year" : 3,
+...             "sem" : 5
+...         },
+...         "hobbies" : ["cricket", "football", "chess"]
+...     },
+...     {
+...         "name" : "Vibha",
+...         "email" : "vibha0101@gmail.com",
+...         "phone" : 8987870019,
+...         "student_details" : {
+...             "batch" : 2023,
+...             "enrollment" : "E23CSEU0909",
+...             "year" : 2,
+...             "sem" : 3
+...         },
+...         "hobbies" : ["cricket", "football", "chess"]
+...     },
+...     {
+...         "name" : "Sikha",
+...         "email" : "sikha901@gmail.com",
+...         "phone" : 9017877789,
+...         "student_details" : {
+...             "batch" : 2022,
+...             "enrollment" : "E24CSEU0913",
+...             "year" : 4,
+...             "sem" : 7
+...         },
+...         "hobbies" : ["cricket", "football", "chess"]
+...     }
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66b9a1c8b1417d10ac9f9914'),
+    '1': ObjectId('66b9a1c8b1417d10ac9f9915'),
+    '2': ObjectId('66b9a1c8b1417d10ac9f9916'),
+    '3': ObjectId('66b9a1c8b1417d10ac9f9917'),
+    '4': ObjectId('66b9a1c8b1417d10ac9f9918'),
+    '5': ObjectId('66b9a1c8b1417d10ac9f9919'),
+    '6': ObjectId('66b9a1c8b1417d10ac9f991a'),
+    '7': ObjectId('66b9a1c8b1417d10ac9f991b'),
+    '8': ObjectId('66b9a1c8b1417d10ac9f991c'),
+    '9': ObjectId('66b9a1c8b1417d10ac9f991d')
+  }
+}
+bennett>
+
+bennett>
+
+bennett>
+
+bennett> db.students.count();
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.
+10
+bennett> db.students.countDocuments();
+10
+bennett> db.students.find({batch:2022});
+
+bennett> db.students.find({name:"Ram"});
+[
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f9914'),
+    name: 'Ram',
+    email: 'ram2@gmail.com',
+    phone: 8987877789,
+    student_details: { batch: 2022, enrollment: 'E23CSEU3444', year: 3, sem: 5 },
+    hobbies: [ 'cricket', 'football', 'chess' ]
+  }
+]
+bennett> db.students.find({"student_details.batch":2022});
+[
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f9914'),
+    name: 'Ram',
+    email: 'ram2@gmail.com',
+    phone: 8987877789,
+    student_details: { batch: 2022, enrollment: 'E23CSEU3444', year: 3, sem: 5 },
+    hobbies: [ 'cricket', 'football', 'chess' ]
+  },
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f9915'),
+    name: 'Aman',
+    email: 'aman52@gmail.com',
+    phone: 8987007789,
+    student_details: { batch: 2022, enrollment: 'E23CSEU3400', year: 3, sem: 5 },
+    hobbies: [ 'cricket', 'football', 'chess' ]
+  },
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f9916'),
+    name: 'Namit',
+    email: 'namit67@gmail.com',
+    phone: 8922877789,
+    student_details: { batch: 2022, enrollment: 'E23CSEU3004', year: 3, sem: 5 },
+    hobbies: [ 'cricket', 'chess', 'tennis' ]
+  },
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f9918'),
+    name: 'Kunal',
+    email: 'kunal11@gmail.com',
+    phone: 8980197789,
+    student_details: { batch: 2022, enrollment: 'E23CSEU3491', year: 3, sem: 5 },
+    hobbies: [ 'cricket', 'football', 'gym' ]
+  },
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f9919'),
+    name: 'Akash',
+    email: 'akash012@gmail.com',
+    phone: 8986717789,
+    student_details: { batch: 2022, enrollment: 'E23CSEU1044', year: 3, sem: 5 },
+    hobbies: [ 'cricket', 'chess', 'hockey' ]
+  },
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f991a'),
+    name: 'Vaibhav',
+    email: 'vaibhav@gmail.com',
+    phone: 8987879881,
+    student_details: { batch: 2022, enrollment: 'E23CSEU2044', year: 3, sem: 5 },
+    hobbies: [ 'cricket', 'football', 'chess' ]
+  },
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f991b'),
+    name: 'Pooja',
+    email: 'pooja61@gmail.com',
+    phone: 8980917789,
+    student_details: { batch: 2022, enrollment: 'E23CSEU3104', year: 3, sem: 5 },
+    hobbies: [ 'cricket', 'football', 'chess' ]
+  },
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f991d'),
+    name: 'Sikha',
+    email: 'sikha901@gmail.com',
+    phone: 9017877789,
+    student_details: { batch: 2022, enrollment: 'E24CSEU0913', year: 4, sem: 7 },
+    hobbies: [ 'cricket', 'football', 'chess' ]
+  }
+]
+bennett> db.students.find({"student_details.batch":2023});
+[
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f9917'),
+    name: 'Harsh',
+    email: 'harsh00@gmail.com',
+    phone: 8987877700,
+    student_details: { batch: 2023, enrollment: 'E24CSEU3044', year: 2, sem: 3 },
+    hobbies: [ 'football', 'chess', 'table tennis' ]
+  },
+  {
+    _id: ObjectId('66b9a1c8b1417d10ac9f991c'),
+    name: 'Vibha',
+    email: 'vibha0101@gmail.com',
+    phone: 8987870019,
+    student_details: { batch: 2023, enrollment: 'E23CSEU0909', year: 2, sem: 3 },
+    hobbies: [ 'cricket', 'football', 'chess' ]
+  }
+]
+bennett> db.students.find({"student_details.batch":2023}, {name:1, email:1, phone:1, _id:0});
+[
+  { name: 'Harsh', email: 'harsh00@gmail.com', phone: 8987877700 },
+  { name: 'Vibha', email: 'vibha0101@gmail.com', phone: 8987870019 }
+]
+bennett>
