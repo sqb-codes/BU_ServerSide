@@ -1,0 +1,124 @@
+Application
+- CRUD App
+  - Back-End -> Express + MongoDB, MVC
+  - Postman
+  - Deployment -> Docker, Docker Compose, Git, AWS, Nginx (Load Balancing)
+
+
+Installation
+- Node
+- Docker Desktop
+- VS Code
+
+Commands
+-> mkdir project_name
+-> cd project_name
+-> npm init -y
+
+-> npm install express
+
+-> docker ps
+-> docker ps -a
+
+-> docker build .
+dot means dockerfile is in current working directory
+
+-> docker build -t express-app-image .
+-t -> tag... we are giving tag/name to our image
+express-app-image - name of my custom image
+
+-> docker run -p 3000:3000 --name express-crud express-app-image
+-p -> port num
+--name -> container name
+
+-> docker run -d -p 3000:3000 --name express-crud express-app-image
+-d -> detach mode
+
+-> docker stop container_name
+-> stop the container
+
+-> docker remove container_name
+- remove the container if container is not running
+
+-> docker remove container_name -f
+- stop and remove the container
+- -f means remove forcefully
+
+-> docker exec -it container_name bash
+- to get inside docker environment
+
+
+Bind mount volume and Sync code
+- changes won't be reflected/sync in Docker
+
+- Use volumes to solve this
+- There is specific type of volume known as Bind Mount
+- It allows us to sync our file system with app directory of Docker
+
+
+Windows command prompt
+- docker run -v %cd%:/app -p 3000:3000 -d --name express-crud express-image
+
+Window Powershell / Mac / Linux
+- docker run -v ${pwd}:/app -p 3000:3000 -d --name express-crud express-image
+
+Alternative for mac users
+- docker run -v $(pwd):/app -p 3000:3000 -d --name express-crud express-image
+
+
+Mount Anonymous Volume
+- docker run -v ${pwd}:/app -v /app/node_modules -p 3000:3000 -d --name express-crud express-image
+  - now it won't sync node_modules
+
+
+Read only mount volumes
+- docker run -v ${pwd}:/app:ro -v /app/node_modules -p 3000:3000 -d --name express-crud express-image
+
+
+Pass environment variable
+- docker run -v ${pwd}:/app:ro -v /app/node_modules --env PORT=4000 -p 3000:4000 -d --name express-crud exp-img
+
+docker run -v ${pwd}:/app:ro -v /app/node_modules --env-file ./.env -p 3000:4000 -d --name express-crud exp-img
+
+======================================
+
+Docker Compose
+
+Execute docker compose
+- docker-compose up -d
+
+For mac
+- docker compose up -d
+
+Remove container
+- docker-compose down
+- docker-compose down -v
+
+What if we want to build a new image ?
+- docker-compose up -d --build
+
+======================================
+
+Dev and Prod Environment
+
+Run Dev
+-> docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up -d
+
+Run Prod
+-> docker-compose -f docker-compose.yaml -f docker-compose.prod.yaml up -d
+
+Down Dev/Prod
+-> docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml down -v
+
+
+
+
+
+
+
+
+
+
+
+
+
