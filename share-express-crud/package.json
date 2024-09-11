@@ -1,17 +1,21 @@
 {
-  "name": "express-crud",
+  "name": "expresscrud",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon -L server.js"
+    "dev": "nodemon -L app.js",
+    "prod" : "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "chalk": "^5.3.0"
+  },
   "dependencies": {
-    "express": "^4.19.2",
-    "nodemon": "^3.1.4"
+    "express": "^4.19.2"
   }
 }

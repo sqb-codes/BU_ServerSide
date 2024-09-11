@@ -1,21 +1,36 @@
-# fetch node.js image from docker hub
-FROM node:18.6
+# FROM baseImage
+FROM node
 
+# set the working directory
+# all the commands will be executed inside app directory
 WORKDIR /app
 
 # COPY . .
-# first dot represent - source - copy all files from current location
-# second dot represent - destination - paste all files in app directory
+# first dot represent source - means all folders and files will be copied
+# second dot - destination - means tha path where those files will be stored/pasted
 
-# COPY package.json /app/
-# COPY server.js /app/
+COPY . /app
+# COPY all files and paste inside app folder
 
-COPY . /app/
+# COPY a particular file and paste in app folder
+# COPY package.json /app
 
-RUN npm install
+# this command will install packages from package.json
+# RUN npm install
 
-EXPOSE 3000
+ARG NODE_ENV
+RUN if [ "${NODE_ENV}" = "development" ]; \
+then npm install; \
+else npm install --only=production; \
+fi
 
-# CMD ["node", "server.js"]
-# CMD ["npm", "start"]
-CMD ["npm", "run", "dev"]
+# EXPORT port
+# EXPOSE 3000
+
+ENV PORT 3000
+EXPOSE ${PORT}
+
+# runs this command when container starts
+CMD ["node", "app.js"]
+
+# CMD ["npm", "run", "dev"]
