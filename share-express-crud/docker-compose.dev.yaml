@@ -5,6 +5,9 @@ services:
       context: .
       args: 
       - NODE_ENV=development
+    environment:
+      - MONGO_USER=root
+      - MONGO_PASSWORD=root
     volumes:
       - ./:/app:ro
       - /app/node_modules
