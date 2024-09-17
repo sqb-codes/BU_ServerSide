@@ -6,18 +6,16 @@ services:
       - "3000:3000"
     environment:
       - PORT=3000
-    env_file:
-      - ./.env
+    # env_file:
+    #   - ./.env
 
   mongo:
     image: mongo
-
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=root
-
     volumes:
-      - mongo-db:/data/db
+      - mongo-data:/data/db
 
 volumes:
- mongo-db:
+  mongo-data:

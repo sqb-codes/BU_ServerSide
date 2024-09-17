@@ -1,9 +1,8 @@
 version: '3'
 services:
   node-app:
-    build:
+    build: 
       context: .
-      args: 
-      - NODE_ENV=production
-    # won't execute nodemon in production
-    command: npm run prod
+      args:
+        - NODE_ENV=production
+    command: node app.js

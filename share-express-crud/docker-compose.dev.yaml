@@ -1,10 +1,10 @@
 version: '3'
 services:
   node-app:
-    build:
+    build: 
       context: .
-      args: 
-      - NODE_ENV=development
+      args:
+        - NODE_ENV=development
     environment:
       - MONGO_USER=root
       - MONGO_PASSWORD=root

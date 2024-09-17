@@ -25,12 +25,7 @@ else npm install --only=production; \
 fi
 
 # EXPORT port
-# EXPOSE 3000
+EXPOSE 3000
 
-ENV PORT 3000
-EXPOSE ${PORT}
-
-# runs this command when container starts
+# runs the container
 CMD ["node", "app.js"]
-
-# CMD ["npm", "run", "dev"]
