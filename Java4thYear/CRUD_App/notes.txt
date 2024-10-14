@@ -1,0 +1,11 @@
+OOPS
+- Data Abstraction
+- Encapsulation - wrap methods and variables in a class
+- Inheritance
+- Polymorphism
+
+
+CRUD Application
+- OOPS
+- S.O.L.I.D Principles
+- JDBC
