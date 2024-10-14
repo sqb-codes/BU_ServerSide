@@ -1,0 +1,12 @@
+Employee salary slip
+
+Emp Salary
+- Basic salary - 50000
+Earnings
+- HRA - 10%
+- TA - 5%
+- MA - 10%
+Deductions
+- TDS - 10%
+- PF - 2.5%
+Net Payaable Salary = Basic Salary + Earnings - Deductions

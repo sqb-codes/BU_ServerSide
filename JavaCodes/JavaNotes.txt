@@ -1,0 +1,3 @@
+S.O.L.I.D
+
+S - SRP - Single Responsibility Principle
