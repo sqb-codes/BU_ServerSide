@@ -2,7 +2,7 @@ package OOPS.EmpSalarySlip;
 
 public class EmpCaller {
     public static void main(String[] args) {
-        Employee emp_1 = new Employee(101, "John", 56000, "IT");
+        Employee emp_1 = new Employee(101, "john smith", 56000, "IT");
         // System.out.println(emp_1.empId);
         // System.out.println(emp_1.empName);
         // System.out.println(emp_1.empSalary);
@@ -16,7 +16,7 @@ public class EmpCaller {
 
         System.out.println(emp_1.toString());
 
-        Employee emp_2 = new Employee(102, "Max", 59000, "IT");
+        Employee emp_2 = new Employee(102, "max", 59000, "IT");
 
         System.out.println("Data from : " + emp_2.companyName);
         // System.out.println(emp_2.getEmpId());

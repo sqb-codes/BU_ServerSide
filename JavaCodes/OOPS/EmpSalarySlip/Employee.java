@@ -5,6 +5,7 @@ package OOPS.EmpSalarySlip;
 // Good Encapsulation - Encapsulation + Data Hiding
 
 // POJO - Plain Old Java Object
+// Beans
 // SRP - Single Responsibility Principle
 
 
@@ -14,10 +15,24 @@ class Employee {
     private double empSalary;
     private String empDept;
     public String companyName;
+    private double hra;
+    private double ta;
+    private double ma;
+    private double tds;
+    private double pf;
+
+    // Dependency Injection
+    Formatting format;
 
     // Default Constructor
     Employee() {
         this.companyName = "TCS";
+        this.hra = 0.15;
+        this.ta = 0.05;
+        this.ma = 0.05;
+        this.tds = 0.10;
+        this.pf = 0.02;
+        format = new Formatting();
     }
 
     // Parameterized constructor
@@ -61,8 +76,37 @@ class Employee {
         this.empDept = empDept;
     }
 
+    private double calculateHRA() {
+        return this.empSalary * this.hra;
+    }
+
+    private double calculateTA() {
+        return this.empSalary * this.ta;
+    }
+
+    private double calculateMA() {
+        return this.empSalary * this.ma;
+    }
+
+    private double calculateTDS() {
+        return this.empSalary * this.tds;
+    }
+
+    private double calculatePF() {
+        return this.empSalary * this.pf;
+    }
+
+    private double calculateSalary() {
+        double earnings = this.empSalary + calculateHRA() + calculateMA() + calculateTA();
+        double deductions = calculatePF() + calculateTDS();
+        double netSalary = earnings - deductions;
+        return netSalary;
+    }
+
     @Override
     public String toString() {
+        this.empSalary = calculateSalary();
+        this.empName = format.formatName(this.empName);
         return this.empId + "," + this.empName + "," + this.empSalary + "," + this.empDept;
     }
 
