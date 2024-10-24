@@ -1,21 +1,26 @@
 package com.ems.controller;
 
+import com.ems.dao.EmployeeDAOImpl;
 import com.ems.dto.EmployeeDTO;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class EmployeeController {
-    public void addNewEmp(EmployeeDTO employeeDTO) {
-        System.out.println(employeeDTO.getEmpName());
+    public void addNewEmployee(EmployeeDTO empDTO) throws IOException, SQLException {
+        EmployeeDAOImpl empDao = new EmployeeDAOImpl();
+        empDao.addNewEmp(empDTO);
     }
 
-    public void showAllEmp() {
-
-    }
-
-    public void updateEmyById() {
+    public void showAllEmployees() {
 
     }
 
     public void deleteEmpById() {
+
+    }
+
+    public void updateEmpById() {
 
     }
 }

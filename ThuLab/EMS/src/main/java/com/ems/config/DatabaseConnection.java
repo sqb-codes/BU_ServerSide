@@ -7,8 +7,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class DatabaseConnection {
-    static Connection connection;
-
+    private static Connection connection;
     public static Connection getConnection() throws IOException {
         Properties properties = new Properties();
         properties.load(DatabaseConnection.class.getClassLoader().getResourceAsStream("db.properties"));
@@ -19,7 +18,7 @@ public class DatabaseConnection {
 
         try {
             connection = DriverManager.getConnection(url, username, password);
-            System.out.println("Connected to MySQL Successfully...");
+            System.out.println("Connection established with MySQL");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

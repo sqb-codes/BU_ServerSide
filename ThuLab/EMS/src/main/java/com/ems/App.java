@@ -1,18 +1,15 @@
 package com.ems;
 
-import com.ems.config.DatabaseConnection;
 import com.ems.controller.EmployeeController;
 import com.ems.dto.EmployeeDTO;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class App {
-    public static void main(String[] args) throws IOException {
-        EmployeeController employeeController = new EmployeeController();
-        EmployeeDTO empDto = new EmployeeDTO(101, "John", 45000, "IT");
-        employeeController.addNewEmp(empDto);
-
-        DatabaseConnection.getConnection();
-
+    public static void main(String[] args) throws IOException, SQLException {
+        EmployeeController empController = new EmployeeController();
+        EmployeeDTO emp_1 = new EmployeeDTO(102, "Max", "HR", 45000);
+        empController.addNewEmployee(emp_1);
     }
 }
