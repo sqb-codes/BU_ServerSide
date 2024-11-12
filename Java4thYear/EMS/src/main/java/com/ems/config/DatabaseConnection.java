@@ -9,16 +9,18 @@ import java.util.Properties;
 public class DatabaseConnection {
     private static Connection connection;
 
-    public Connection getConnection() throws IOException {
+    public static Connection getConnection() throws IOException {
+
+        Properties prop = new Properties();
+        prop.load(DatabaseConnection.class.getClassLoader().getResourceAsStream("db.properties"));
+
+        final String URL = prop.getProperty("db.URL");
+        final String USERNAME = prop.getProperty("db.USERNAME");
+        final String PASSWORD = prop.getProperty("db.PASSWORD");
+
         try {
-            Properties prop = new Properties();
-            prop.load(DatabaseConnection.class.getClassLoader().getResourceAsStream("db.properties"));
-
-            String url = prop.getProperty("db.url");
-            String username = prop.getProperty("db.username");
-            String password = prop.getProperty("db.password");
-
-            connection = DriverManager.getConnection(url, username, password);
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            System.out.println("Connection established...");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

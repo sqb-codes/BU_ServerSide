@@ -1,14 +1,16 @@
 package com.ems;
 
-import com.ems.controller.EmployeeController;
-import com.ems.dto.EmployeeDTO;
+import com.ems.controller.EmpController;
+import com.ems.dto.EmpDTO;
+
+import java.io.IOException;
 
 public class App {
-    public static void main(String[] args) {
-        EmployeeController controller = new EmployeeController();
-        EmployeeDTO emp_1 = new EmployeeDTO(101, "John", 56000, "IT");
-
-        controller.addNewEmp(emp_1);
-
+    public static void main(String[] args) throws IOException {
+        EmpController empController = new EmpController();
+        EmpDTO empDTO = new EmpDTO(102, "Sam", 50000, "IT");
+        empController.addEmp(empDTO);
+//        empController.deleteEmpById(101);
+//        empController.updateEmpById();
     }
 }
